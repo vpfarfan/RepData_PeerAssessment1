@@ -14,7 +14,7 @@ library(dplyr)
 library(ggplot2)
 
 # Load data
-setwd('E:/Cursos/DS JHopkins/RepData_PeerAssessment1')
+setwd('E:/Cursos/DS JHopkins/5.RR/RepData_PeerAssessment1')
 if (!file.exists("activity.csv")) {
   unzip("activity.zip")
 }
