@@ -72,7 +72,7 @@ ggplot(daily, aes(x=interval, y=avg)) + geom_line() +
        title="Average steps taken per day")
 ```
 
-![](PA1_template_files/figure-html/daily activity pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/daily_activity_pattern-1.png)<!-- -->
 
 #### Interval with maximun number of steps
 
@@ -123,7 +123,7 @@ ggplot(total.filled, aes(totalsteps)) +
              title="Total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/imput missing values-1.png)<!-- -->
+![](PA1_template_files/figure-html/imput_missing_values-1.png)<!-- -->
 
 #### Average number of steps taken per day
 
@@ -173,4 +173,4 @@ p <- ggplot(day.type, aes(x=interval, y=avg)) +
 p + facet_grid(type~.)
 ```
 
-![](PA1_template_files/figure-html/weekdays and weekends-1.png)<!-- -->
+![](PA1_template_files/figure-html/weekdays_and_weekends-1.png)<!-- -->

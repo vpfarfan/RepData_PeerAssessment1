@@ -46,7 +46,7 @@ median(total$totalsteps, na.rm=TRUE)
 ```
 
 ## What is the average daily activity pattern?
-```{r daily activity pattern}
+```{r daily_activity_pattern}
 # group by interval and compute mean across all days
 daily <- df %>%
   group_by(interval) %>%
@@ -58,21 +58,21 @@ ggplot(daily, aes(x=interval, y=avg)) + geom_line() +
 ```
 
 #### Interval with maximun number of steps
-```{r max steps}
+```{r max_steps}
 max.interval <- daily[which.max(x = daily$avg), "interval"]
 max.interval
 ```
 
 ## Imputing missing values
 #### Number of missing values:
-```{r missing values}
+```{r missing_values}
 missing <- nrow(df[is.na(df$steps),])
 missing
 ```
 
 #### Fill missing values using the average steps for the same interval in a new 
 data frame
-```{r imput missing values}
+```{r imput_missing_values}
 # Fill NAs
 df.filled <- df
 df.filled$steps <- ifelse(is.na(df.filled$steps), 
@@ -93,12 +93,12 @@ ggplot(total.filled, aes(totalsteps)) +
 ```
 
 #### Average number of steps taken per day
-```{r average na filled}
+```{r average_na_filled}
 mean(total.filled$totalsteps)
 ```
 
 #### Median number of steps taken per day
-```{r median na filled}
+```{r median_na_filled}
 median(total.filled$totalsteps, na.rm=TRUE)
 ```
 #### Replacing the NAs with the average value of steps for the same interval
@@ -108,7 +108,7 @@ median(total.filled$totalsteps, na.rm=TRUE)
 #### the median.
 
 ## Are there differences in activity patterns between weekdays and weekends?
-```{r weekdays and weekends}
+```{r weekdays_and_weekends}
 # Create a new variable
 df.filled <- mutate(df.filled, 
        type=ifelse(weekdays(as.Date(df.filled$date)) %in% c("Saturday", "Sunday"), 
